@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand&display=swap');
+html,body{
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, #f34, #725);
+    font-family: 'Quicksand', sans-serif;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.container{
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.lead { font-family: 'Quicksand'}
+.header-bar{
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+	height: 50px;
+    border: 10px solid transparent;
+    border-top: 10px solid #fffa;
+	border-left: 10px solid #fffa;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.header-bar::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+	width: 30%;
+	height: 49px;
+    border: 10px solid transparent;
+	border-bottom: 10px solid #fffa;
+	border-right: 10px solid #fffa;
+	transition: 0.3s linear all;
+}
+.header-bar > .logo {
+	position: absolute;
+	top: calc(50% - 20px);
+	left: 10px;
+	transform: translateY(-50%);
+	color: #fffc;
+	font-family: 'Parisienne', cursive;
+	cursor: default;
+	user-select: none;
+}
+.slider-menu {
+	position: absolute;
+    top: 0;
+	right: 0;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+.slider-menu > li{
+    display: inline-flex;
+    padding: 14px;
+	margin-left: 2px;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s linear all;
+    user-select: none;
+    text-decoration: none; /* no underline */
+}
+.slider-menu > li:hover {
+	color: #faa;
+	box-shadow: 0 50px 5px rgba(0, 0, 0, 0.15) inset;
+}
+a {
+  color:#fff;
+  text-decoration: none; /* no underline */
+}
+.aeu-signature {
+	font-size: 15px;
+	line-height: 30px;
+	background-color: #fffa;
+	padding: 5px 10px;
+	border-radius: 25px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Quicksand', sans-serif;
+    color: #f34;
+    font-weight: 1000;
+    }
+.fl-table {
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.fl-table th {
+    text-align: center;
+    padding: 13px;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.fl-table td {
+    text-align: center;
+    padding: 13px;
+    font-weight: 800;
+    border: none;
+    font-size: 14px;
+}
+
+.fl-table thead th {
+    color: #f34;
+    background-color: #fffa;
+}
+
+
+.fl-table tr:nth-child(even) {
+    color: #f34;
+    background-color: #fffa;
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color: #fffa;
+  height: 1px;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #fffa;
+}
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #fffa;
+}
+input[type=submit] {
+	font-size: 15px;
+	line-height: 30px;
+	background-color: #fffa;
+	padding: 5px 10px;
+	border-radius: 25px;
+    font-family: 'Quicksand';
+    color: #f34;
+    font-weight: 800;
+    width: 10%;
+    margin-left: 45%;
+}
+textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #fffa;
+}
+    </style>
+</head>
+<body>
+    <div class = "container">
+
+        <div class="header-bar">
+            <h1 class="logo">C</h1>
+            <ul class="slider-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <br>
+        <p class = "lead aeu-signature">Contact via DM</p>
+        <p class="lead"><strong>Mobile - </strong>7845481401 (or)<br><br>
+            <strong>Linkedin - </strong>https://www.linkedin.com/in/raddhika-devi-806840b5/</p>
+        <hr>
+        <p class = "lead aeu-signature">Contact via Email</p>
+    <form action="mailto:raddhika.devi@gmail.com" method = "POST" enctype="text/plain">
+        <label>Your Name</label>
+        <input type = "text" value = "" name ="yourName">
+        <br>
+        <label>Your Email</label>
+        <input type = "email" value = "" name ="yourEmail">
+        <br>
+        <label>Message </label>
+        <textarea name = "yourMessage" rows = "3" cols = "80"></textarea>
+        <br>
+        <input type = "submit" name ="">
+    </form>
+    <hr>
+    </div>
+</body>
+</html>
